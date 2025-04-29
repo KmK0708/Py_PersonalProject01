@@ -6,12 +6,12 @@
 
 1. **코인 가격 조회**
    - Binance API를 통해 주요 컨 가격을 **USDT 기준**으로 가져온다.
-   - 가능 게 검색 중인 컨:  
+   - 검색 가능한 코인:  
      `Bitcoin`, `Ethereum`, `XRP`, `Solana`, `Doge`, `Ondo`
 
 2. **가격 기록 (CSV 저장)**
    - `.py` 파일이 위치한 디렉토리의 하위 폴더(`PriceData`)에
-   - 컨별로 가격 기록 파일을 저장.
+   - 코인별로 가격 기록 파일을 저장.
      - 예: `PriceData/BTCUSDT_price.csv`
 
 3. **가격 변동 감지 및 디스코드 알림**
