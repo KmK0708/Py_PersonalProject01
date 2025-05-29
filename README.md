@@ -52,6 +52,7 @@
 ```
 /프로젝트 폴더/
     ├— Py_Coinproject.py
+    ├— Py_Coindict.py
     └— PriceData/
         ├— BTCUSDT_price.csv
         ├— ETHUSDT_price.csv
@@ -65,6 +66,7 @@
 
 ## ⚙️ 추후 개선 아이디어
 
----
+클라우드 연동해서 24시간 작동
+카카오톡api연동해서 카카오톡으로도 알람오게하기
 
 
