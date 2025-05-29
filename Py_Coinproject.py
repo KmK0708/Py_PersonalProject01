@@ -1,22 +1,13 @@
 import requests
 import csv
-from datetime import datetime
 import time
 import os
+from datetime import datetime
+from Py_CoinDict import coin_names
+
 
 #디스코드 웹훅 주소
 WEBHOOK_URL = "https://discord.com/api/webhooks/1365705287071432714/br-fizLEvugPrHnWjFyKgfksuYicrlI2tGsCtpNDTnpug62e1pPksYngjEkgVHzMzGeC"
-
-# 감시할 코인 딕셔너리
-coin_names = {
-    'BTCUSDT': 'Bitcoin',
-    'ETHUSDT': 'Ethereum',
-    'XRPUSDT': 'XRP',
-    'SOLUSDT': 'Solana',
-    'DOGEUSDT': 'Doge',
-    'ONDOUSDT': 'Ondo'
-}  
-# 비트코인, 이더리움, 리플 , 솔라나...
 
 #디스코드 웹훅으로 디스코드에 알람보내기 함수
 def send_discord_alert(message, webhook_url):
@@ -74,7 +65,6 @@ def save_price_to_csv(symbol,time_str, price):
     except Exception as e:
         print(f"❗ 파일 저장 실패: {symbol} ({e})")
 
-
 # 프로그램 시작 시, 코인별 기준 가격 설정
 baseline_prices = {}
 
@@ -114,5 +104,5 @@ while True:
             alert_msg = f"🚀 [{coin_name}] 가격 상승! 현재 {current_price:.2f} 달러 (기준가 대비 5% 상승)"
             send_discord_alert(alert_msg, WEBHOOK_URL)
 
-    # 5초 대기 (테스트용) → 실제 운영할 때는 300초(5분) 추천
-    time.sleep(5)
+    # 10초 대기 (테스트용) → 실제 운영할 때는 300초(5분) 추천
+    time.sleep(10)
